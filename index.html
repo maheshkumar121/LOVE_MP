@@ -9,8 +9,6 @@
 
 
 
-  <link rel="stylesheet" href="https://cpwebassets.codepen.io/assets/global/global-bc29675167aed7822f5b9bd87fb63d6871715a3addf335d74c87605a9a2e095c.css" media="all">
-  <link rel="stylesheet" href="https://cpwebassets.codepen.io/assets/packs/css/everypage-ef2ac148.css">
   <link rel="stylesheet" href="https://cpwebassets.codepen.io/assets/editor/editor-74e9b05132d1286c2791b1bfde8ed3c2f6517e22230829453b1c02fc6fe88b04.css" media="all">
 
   
@@ -18,7 +16,6 @@
   
 
 
-<link rel="stylesheet" href="https://cpwebassets.codepen.io/assets/editor/themes/twilight-5624f2aa0a9e5ad3c27da1db150d791e788247e197af02b4cd6db6fbc40f7354.css" id="cm-theme">
 
 <style id="cm-font-family" class="cm-font-family" nonce="">
   
@@ -40,6 +37,39 @@
   .CodeMirror-hint {
     font-size: 15px;
   }
+
+ .result-iframe {
+  position: relative;
+  top: -120px;       /* adjust if needed */
+  height: calc(100% + 120px);
+}
+
+.iframe-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.result-iframe {
+  width: 100%;
+  height: calc(100% + 160px); /* hides footer */
+  border: none;
+}
+
+.cssletter {
+    position: absolute!important;
+    width: 100%
+887.786px
+;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -webkit-user-select: none;
+    margin: 24dvh 0;
+}
 </style>
 
 
@@ -60,12 +90,12 @@
    background:#54aae9 !important
 }
 </style>
-<script src="https://codepen.io/stats/fr/KVHtLEVcgM.js?1769601600000" async=""></script><style type="text/css" id="mytempCss">._8mqQwQ { display: none; } ._1TWLMK.icF5zO { opacity: 0.01; }</style><script src="https://srv.buysellads.com/ads/CWYDP2QE.json?callback=customJSONPCallback"></script></head>
 
 <body class="room-editor editor state-htmlOn-cssOn-jsOn twilight   layout-top  logged-in">
   
 
   
+
 
 <div class="item-settings-modal tab-layout tab-layout-modal pen  item-settings-modal-half" id="item-settings-modal">
 
@@ -84,27 +114,7 @@
 
   
 
-  <div class="custom-select-wrap">
-    <select name="html-preprocessor" id="html-preprocessor" class="fullwidth">
-          <option value="none">None</option>
-          <option value="haml">Haml</option>
-          <option value="markdown">Markdown</option>
-          <option value="slim">Slim</option>
-          <option value="pug">Pug</option>
-    </select>
-    <div class="select-icon">
-      <svg viewBox="-122.9 121.1 105.9 61.9" class="icon-arrow-down-mini">
-        <path d="M-63.2,180.3l43.5-43.5c1.7-1.7,2.7-4,2.7-6.5s-1-4.8-2.7-6.5c-1.7-1.7-4-2.7-6.5-2.7s-4.8,1-6.5,2.7l-37.2,37.2l-37.2-37.2
-        c-1.7-1.7-4-2.7-6.5-2.7s-4.8,1-6.5,2.6c-1.9,1.8-2.8,4.2-2.8,6.6c0,2.3,0.9,4.6,2.6,6.5l0,0c11.4,11.5,41,41.2,43,43.3l0.2,0.2
-        C-73.5,183.9-66.8,183.9-63.2,180.3z"></path>
-      </svg>
-      <svg viewBox="-122.9 121.1 105.9 61.9" class="icon-arrow-down-mini">
-        <path d="M-63.2,180.3l43.5-43.5c1.7-1.7,2.7-4,2.7-6.5s-1-4.8-2.7-6.5c-1.7-1.7-4-2.7-6.5-2.7s-4.8,1-6.5,2.7l-37.2,37.2l-37.2-37.2
-        c-1.7-1.7-4-2.7-6.5-2.7s-4.8,1-6.5,2.6c-1.9,1.8-2.8,4.2-2.8,6.6c0,2.3,0.9,4.6,2.6,6.5l0,0c11.4,11.5,41,41.2,43,43.3l0.2,0.2
-        C-73.5,183.9-66.8,183.9-63.2,180.3z"></path>
-      </svg>
-    </div>
-  </div>
+
 
 </div>
 
@@ -872,11 +882,7 @@ c6.4-6.4,16.7-6.4,23.1,0C43,19.9,43,30.3,36.6,36.6z"></path>
 
   </div>
 
-  <footer>
-    <div class="save-and-close-wrap">
-        <input type="button" class="button button-small green button-no-right-margin close" value="Close" id="close-settings">
-    </div>
-  </footer>
+ 
 </div>
 
 
@@ -888,26 +894,24 @@ c6.4-6.4,16.7-6.4,23.1,0C43,19.9,43,30.3,36.6,36.6z"></path>
 
     
 
-    <div id="resizer" class="resizer">
-      <span></span>
-      <div id="width-readout" class="width-readout">903px</div>
-      <div id="pen-ad"></div>
-    </div>
+   
 
       <section id="drawer" class="comments">
 
       </section>
 
+
     <div class="output-container">
-      <div class="output-sizer"> 
-        <div id="result_div" class="result">
-          <iframe id="result" name="CodePen" title="CodePen Preview" src="https://codepen.io/frills/fullpage/xbxxzBw?view=" sandbox="allow-downloads allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="accelerometer *; ambient-light-sensor *; camera *; display-capture *; encrypted-media *; geolocation *; gyroscope *; microphone *; midi *; payment *; serial *; vr *; web-share *; xr-spatial-tracking *" scrolling="auto" allowtransparency="true" allowpaymentrequest="true" allowfullscreen="true" class="result-iframe " loading="lazy">
-          </iframe>
-      </div> 
-
+  <div class="output-sizer">
+    <div id="result_div" class="result iframe-wrapper">
+      <iframe
+        src="https://codepen.io/frills/fullpage/xbxxzBw"
+        class="result-iframe">
+      </iframe>
     </div>
-
   </div>
+</div>
+
 
 </div>
 
@@ -946,6 +950,25 @@ c6.4-6.4,16.7-6.4,23.1,0C43,19.9,43,30.3,36.6,36.6z"></path>
 
 
 <script nonce="">(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.nonce='/CMFOVK85mM=';d.innerHTML="window.__CF$cv$params={r:'9c505496b898cc07',t:'MTc2OTYwMTYzNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='/CMFOVK85mM=';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
+<script>
+(function () {
+  function removeWarning() {
+    document.querySelectorAll('.referer-warning').forEach(el => el.remove());
+  }
+
+  // Remove immediately if already present
+  removeWarning();
+
+  // Watch for dynamically injected content
+  const observer = new MutationObserver(removeWarning);
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+})();
+</script>
 
 </body></html>
